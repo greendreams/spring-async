@@ -26,7 +26,7 @@ public class GitHubLookupService {
         String url = String.format("https://api.github.com/users/%s", user);
         User results = restTemplate.getForObject(url, User.class);
         // Artificial delay of 1s for demonstration purposes
-        Thread.sleep(5000L);
+        Thread.sleep(2000L);
         return CompletableFuture.completedFuture(results);
     }
 

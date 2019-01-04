@@ -29,8 +29,9 @@ public class AppRunner implements CommandLineRunner {
         CompletableFuture<User> page2 = gitHubLookupService.findUser("CloudFoundry");
         CompletableFuture<User> page3 = gitHubLookupService.findUser("Spring-Projects");
 
-        // Wait until they are all done
-        CompletableFuture.allOf(page1,page2,page3).join();
+        // Wait until they are all done.
+        //If you don't want to wait comment the below line.
+        //CompletableFuture.allOf(page1,page2,page3).join();
 
         // Print results, including elapsed time
         logger.info("Elapsed time: " + (System.currentTimeMillis() - start));
